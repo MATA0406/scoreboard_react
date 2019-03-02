@@ -1,14 +1,24 @@
 import React from 'react';
 import {Counter} from "./Counter";
 
-export const Player = (props) => {
-  return (
-    <div className="player">
+export class Player extends React.Component {
+  render()
+  {
+    const {id, name, score, removePlayer, changeScore} = this.props;
+    console.log(this.props.name, 'rendered')
+    return (
+      <div className="player">
       <span className="player-name">
-        <button className="remove-player" onClick={() => props.removePlayer(props.id)}>X</button>
+        <button className="remove-player" onClick={() => removePlayer(id)}>X</button>
       </span>
-      <span className="player-name">{props.name}</span>
-      <Counter score={props.score} changeScore={props.changScore} index={props.index}/>
-    </div>
-  )
+        <span className="player-name">{name}</span>
+        <Counter {...this.props}/>
+      </div>
+    )
+  }
+
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
+    console.log('shouldComponentUpdate', nextProps);
+    return nextProps.score !== this.props.score;
+  }
 }
