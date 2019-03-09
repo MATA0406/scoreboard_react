@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 import {Home} from "./Home";
-import {Heroes} from "./Heroes";
+import {Heroes} from "./heroes/Heroes";
 import Scoreboard from "./scoreboard/Scoreboard";
 import {Menu} from "./Menu";
 
