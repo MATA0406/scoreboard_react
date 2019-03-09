@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import {connect} from "react-redux";
 
-export const Stats = (props) => {
+const Stats = (props) => {
   const totalPlayers = props.players.length;
   const totalScore = props.players.reduce((total, player) => total + player.score, 0);
 
@@ -19,3 +21,15 @@ export const Stats = (props) => {
     </table>
   )
 }
+
+Stats.propTypes = {
+  players: PropTypes.arrayOf(PropTypes.shape({
+    score: PropTypes.number
+  }))
+}
+
+let mapStateToProps = (state) => ({
+  storePlayers: state.player.players
+})
+
+export default connect(mapStateToProps)(Stats);
