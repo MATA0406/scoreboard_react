@@ -33,16 +33,16 @@ export class Menu extends React.Component {
   render() {
     return (
       <Fragment>
-        <Navbar color="light" light expand="md">
+        <Navbar color="dark" dark expand="md">
           <NavLink to="/" className="navbar-brand">React</NavLink>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink to="/heroes" className="navbar-brand">Heroes</NavLink>
+                <NavLink to="/heroes" className="nav-link">Heroes</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/scoreboard" className="navbar-brand">ScoreBoard</NavLink>
+                <NavLink to="/scoreboard" className="nav-link">ScoreBoard</NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
