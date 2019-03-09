@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, {Fragment} from 'react';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 import {Home} from "./Home";
@@ -15,9 +15,9 @@ export class Root extends React.Component {
           <Menu/>
           <div className="container" style={{backgroundColor: '#ffffff'}}>
             <Switch>
-              <Route exact path={"/"} component={Home} />
-              <Route path={"/heroes"} component={Heroes} />
-              <Route path={"/scoreboard"} component={Scoreboard} />
+              <Route exact path={"/"} component={Home}/>
+              <Route path={"/heroes"} component={Heroes}/>
+              <Route path={"/scoreboard"} component={Scoreboard}/>
             </Switch>
           </div>
         </Fragment>
