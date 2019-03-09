@@ -56,7 +56,6 @@ const playerReducer = (state = playerInitialState, action) => {
     default:
       return state;
   }
-  return state;
 }
 
 // 여러가지 리듀스를 합친다.(키값 생략 가능)
