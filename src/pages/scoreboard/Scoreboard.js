@@ -5,14 +5,14 @@ import Header from "../../components/Header";
 import Player from "../../components/Player";
 import AddPlayerForm from "../../components/AddPlayerForm";
 
-import './Scoreboard.css';
+import styles from './Scoreboard.module.css';
 
 
 class Scoreboard extends React.Component {
 
   render() {
     return (
-      <div className="scoreboard">
+      <div className={styles.scoreboard}>
         <Header players={this.props.players} />
         {
           this.props.players.map((play, index) => <Player

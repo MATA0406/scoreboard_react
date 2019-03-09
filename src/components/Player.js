@@ -2,6 +2,8 @@ import React from 'react';
 import Counter from "./Counter";
 import {connect} from "react-redux";
 import {removePlayer} from "../redux/actions";
+import styles from '../pages/scoreboard/Scoreboard.module.css';
+
 
 class Player extends React.Component {
   render()
@@ -9,11 +11,11 @@ class Player extends React.Component {
     const {id, name, score, removePlayer} = this.props;
     console.log(this.props.name, 'rendered')
     return (
-      <div className="player">
-      <span className="player-name">
-        <button className="remove-player" onClick={() => removePlayer(id)}>X</button>
+      <div className={styles.player}>
+      <span className={styles["player-name"]}>
+        <button className={styles["remove-player"]} onClick={() => removePlayer(id)}>X</button>
       </span>
-        <span className="player-name">{name}</span>
+        <span className={styles["player-name"]}>{name}</span>
         <Counter index={id} score={score}/>
       </div>
     )
